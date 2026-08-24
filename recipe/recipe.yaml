@@ -41,7 +41,9 @@ outputs:
             - tritonclient
             - tritonclient.utils
           pip_check: true
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
   - package:
       name: ${{ name }}-http
     build:
@@ -65,7 +67,9 @@ outputs:
           imports:
             - tritonclient.http
           pip_check: true
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
   - package:
       name: ${{ name }}-grpc
     build:
@@ -90,7 +94,9 @@ outputs:
           imports:
             - tritonclient.grpc
           pip_check: true
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
 
 about:
   license: BSD-3-Clause
